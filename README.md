@@ -1,2 +1,0 @@
-# openCVLesson
-OpenCVのレッスン
