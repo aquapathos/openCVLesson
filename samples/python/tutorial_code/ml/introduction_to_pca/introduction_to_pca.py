@@ -81,17 +81,17 @@ _, bw = cv.threshold(gray, 50, 255, cv.THRESH_BINARY | cv.THRESH_OTSU)
 
 ## [contours]
 # Find all the contours in the thresholded image
-_, contours, _ = cv.findContours(bw, cv.RETR_LIST, cv.CHAIN_APPROX_NONE)
+contours, _ = cv.findContours(bw, cv.RETR_LIST, cv.CHAIN_APPROX_NONE)
 
 for i, c in enumerate(contours):
     # Calculate the area of each contour
-    area = cv.contourArea(c);
+    area = cv.contourArea(c)
     # Ignore contours that are too small or too large
     if area < 1e2 or 1e5 < area:
         continue
 
     # Draw each contour only for visualisation purposes
-    cv.drawContours(src, contours, i, (0, 0, 255), 2);
+    cv.drawContours(src, contours, i, (0, 0, 255), 2)
     # Find the orientation of each shape
     getOrientation(c, src)
 ## [contours]
